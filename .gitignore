@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Folders to ignore when sharing this with the class
+.orchestrator/
+EncoderDecoder.Tests/
