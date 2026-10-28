@@ -40,3 +40,31 @@ public class MessageDecoderTests
         Assert.Equal("BCDF", result);
     }
 }
+
+public class MessageReverserTests
+{
+    [Theory]
+    [InlineData("", "")]
+    [InlineData("A", "A")]
+    [InlineData("Hello", "olleH")]
+    public void Reverse_ReversesCharacters(string message, string expected)
+    {
+        Assert.Equal(expected, MessageReverser.Reverse(message));
+    }
+
+    [Fact]
+    public void Encode_ThenReverse_ReturnsReversedEncodedMessage()
+    {
+        string result = MessageReverser.Reverse(MessageEncoder.Encode("Hello"));
+
+        Assert.Equal("0ll3H", result);
+    }
+
+    [Fact]
+    public void Decode_ThenReverse_ReturnsReversedDecodedMessage()
+    {
+        string result = MessageReverser.Reverse(MessageDecoder.Decode("H3ll0"));
+
+        Assert.Equal("OllEH", result);
+    }
+}

@@ -36,7 +36,7 @@ switch (menuChoice) // använder char-variabeln menuChoice för att aktivera rä
             string encoderInput = InputHelper.InputValidation("What's your message? "); // kallar in metoden InputValidation för att hantera eventuell felaktig input
             string encoded = MessageEncoder.Encode(encoderInput); // metoden Encode hanterar själva chiffreringen
 
-            Console.WriteLine($"Here's your encoded message: {encoded}\n");
+            Console.WriteLine($"Here's your encoded message: {MessageReverser.Reverse(encoded)}\n");
             break;
         }
         break;
@@ -47,7 +47,7 @@ switch (menuChoice) // använder char-variabeln menuChoice för att aktivera rä
             string decoderInput = InputHelper.InputValidation("What's your message? ");
             string decoded = MessageDecoder.Decode(decoderInput);
 
-            Console.WriteLine($"Here's your decoded message: {decoded}");
+            Console.WriteLine($"Here's your decoded message: {MessageReverser.Reverse(decoded)}");
             break;
         }
         break;
